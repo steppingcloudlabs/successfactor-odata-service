@@ -1,0 +1,38 @@
+{
+    "name": "successfactor-odata-service",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/steppingcloudlabs/successfactor-odata-service.git"
+    },
+    "author": "Prakritidev Verma",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/steppingcloudlabs/successfactor-odata-service/issues"
+    },
+    "homepage": "https://github.com/steppingcloudlabs/successfactor-odata-service#readme",
+    "dependencies": {
+        "axios": "^0.19.0",
+        "body-parser": "^1.19.0",
+        "bunyan": "^1.8.12",
+        "cors": "^2.8.5",
+        "dotenv": "^8.1.0",
+        "express": "^4.17.1",
+        "neo4j-driver": "^1.7.6"
+    },
+    "devDependencies": {
+        "eslint": "^6.5.1",
+        "eslint-config-airbnb-base": "^14.0.0",
+        "eslint-plugin-import": "^2.18.2",
+        "nodemon": "^1.19.2",
+        "mocha": "^6.2.0",
+        "chai": "^4.2.0",
+        "chai-http": "^4.3.0"
+    }
+}
