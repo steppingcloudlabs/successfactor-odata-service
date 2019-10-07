@@ -1,6 +1,6 @@
 module.exports = () => {
   // eslint-disable-next-line global-require
-  const contentSimilarityService = require('../../services/rcm/rcm.services')();
+  const rcmServices = require('../../services/rcm/rcm.services')();
   /**
      * Paper similarity controller
      */
@@ -16,12 +16,10 @@ module.exports = () => {
   const getJobListing = async (req, res, next, { logger }) => {
     try {
       const payload = req.body;
-      // const response = await contentSimilarityService
-      // .getJobListing({ payload, logger });
-      // console.log(response);
-      logger.info('Similar Papers Successfully found for ');
-      res.status(200).send({ status: '200 OK', payload });
+      const response = await rcmServices.getJobListing({ payload, logger });
+      res.status(200).send({ status: '200 OK', response });
     } catch (error) {
+      logger.info(error);
       next(error);
     }
   };
