@@ -15,7 +15,6 @@ module.exports = () => {
       idpUrl,
       privateKey,
     } = payload;
-
     params.append('client_id', clientId);
     params.append('user_id', masterUserId);
     params.append('token_url', tokenUrl);

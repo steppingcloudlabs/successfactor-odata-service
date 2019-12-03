@@ -17,7 +17,10 @@ module.exports = () => {
     try {
       const payload = req.body;
       const response = await rcmServices.getJobListing({ payload, logger });
-      res.status(200).send({ status: '200 OK', response });
+      res.status(200).send({
+        status: '200 OK',
+        response,
+      });
     } catch (error) {
       logger.info(error);
       next(error);

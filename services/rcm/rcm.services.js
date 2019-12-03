@@ -11,8 +11,7 @@ module.exports = () => {
       const { endpoint } = payload;
       const accessTokenResponse = await utilService.getAccessToken(payload);
       const { access_token } = accessTokenResponse;
-      const url = `${endpoint}/odata/v2/Background_PFStatement?$select=backgroundElementId,userId,Year,attachment,lastModifiedDate,attachmentNav/attachmentId,attachmentNav/fileExtension,attachmentNav/fileName,attachmentNav/fileSize,attachmentNav/fileContent&$expand=attachmentNav&$format=json`;
-      const authStr = 'Bearer '.concat(access_token);
+      const url = `${endpoint}/odata/v2/JobRequisitionPosting?$select=jobPostingId,jobReqId,boardId,postStartDateOffset,postEndDateOffset,postingStatus,jobRequisition/jobReqLocale/jobTitle,jobRequisition/jobReqLocale/jobDescription,jobRequisition/location,jobRequisition/filter3/picklistLabels/label,jobRequisition/country,jobRequisition/department&$expand=jobRequisition/jobReqLocale,jobRequisition/filter3/picklistLabels&$filter=boardId eq '_external' and (postingStatus eq 'Success' or postingStatus eq 'Updated')&$format=json`; const authStr = 'Bearer '.concat(access_token);
       const odataResponse = await axios.get(url, { headers: { Authorization: authStr } });
       resolve(JSON.parse((stringify(odataResponse.data))));
     } catch (err) {

@@ -11,7 +11,6 @@ module.exports = ({ logger }) => {
      */
   router
     .route('/rcm/joblist')
-    .get((req, res, next) => similarityController
-      .getJobListing(req, res, next, { logger }));
+    .post((req, res, next) => similarityController.getJobListing(req, res, next, { logger }));
   return router;
 };
